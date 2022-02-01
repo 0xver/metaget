@@ -24,15 +24,15 @@ const Footer = styled.div`
         border-radius: 0px;
     }
 
-    @media (max-width: 758px) {
+    @media (max-width: 733px) {
         height: 90px;
     }
 
-    @media (max-width: 621px) {
+    @media (max-width: 602px) {
         height: 100px;
     }
 
-    @media (max-width: 544px) {
+    @media (max-width: 536px) {
         height: 115px;
     }
 
@@ -42,7 +42,7 @@ const Footer = styled.div`
         padding-bottom: 20px;
     }
 
-    @media (max-width: 319px) {
+    @media (max-width: 312px) {
         height: 176px;
     }
 `
@@ -104,7 +104,7 @@ const Button = styled.button`
         margin-right: 0px;
     }
 
-    @media (max-width: 328px) {
+    @media (max-width: 312px) {
         margin-bottom: 20px;
     }
 `
@@ -147,7 +147,7 @@ export default function Connect() {
             <Mobile>
             <div>
                 <Text>
-                    MetaSearch is a NFT metadata lookup providing the name, symbol, tokenURI, and owner (ERC721 only). Enter the NFT contract address and token ID to fetch its metadata (MetaMask required). See the&nbsp;
+                    MetaGet is a NFT metadata lookup providing the name, symbol, tokenURI, and owner (ERC721 only). Enter the NFT contract address and token ID to fetch its metadata (MetaMask required). See the&nbsp;
                     <a 
                         style={{
                             textDecoration: "underline",
