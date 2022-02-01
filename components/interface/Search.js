@@ -345,7 +345,7 @@ export default function SearchInterface() {
                     tokenUri = await erc1155metadata.uri(tokenId)
                 }
                 const gateway = "https://ipfs.yt/ipfs/"
-                const proxy = "https://thingproxy.freeboard.io/fetch/http://"
+                /* const proxy = "https://thingproxy.freeboard.io/fetch/http://" */
                 var cid
                 var url
                 if (tokenUri.startsWith("ipfs://")) {
@@ -357,9 +357,9 @@ export default function SearchInterface() {
                     url = connect
                     setUri(url)
                 } else {
-                    const trim = tokenUri.substring(7)
-                    const connect = proxy.concat(trim)
-                    url = connect
+                    /* const trim = tokenUri.substring(7)
+                    const connect = proxy.concat(trim) */
+                    url = tokenUri
                 }
                 setPreview(loadingImage)
                 const response = await fetch(url)
