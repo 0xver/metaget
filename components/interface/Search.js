@@ -344,7 +344,7 @@ export default function SearchInterface() {
                 } else {
                     tokenUri = await erc1155metadata.uri(tokenId)
                 }
-                const gateway = "https://ipfs.yt/ipfs/"
+                const gateway = "https://ipfs.io/ipfs/"
                 /* const proxy = "https://thingproxy.freeboard.io/fetch/http://" */
                 var cid
                 var url
