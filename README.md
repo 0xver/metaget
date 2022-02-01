@@ -1,6 +1,6 @@
 # MetaGet
 
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) ![build](https://github.com/ntkme/github-buttons/workflows/build/badge.svg)
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Get NFT metadata using the contract address and token ID
 
