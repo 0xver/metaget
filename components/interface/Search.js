@@ -332,7 +332,6 @@ export default function SearchInterface() {
     async function getImage() {
         try {
             if (typeof window.ethereum !== "undefined") {
-                await requestAccount()
                 const provider = new ethers.providers.Web3Provider(window.ethereum)
                 const erc165 = new ethers.Contract(contractAddress, IERC165.abi, provider)
                 const support = await erc165.supportsInterface(0x80ac58cd)
@@ -386,7 +385,6 @@ export default function SearchInterface() {
         try {
             if (typeof window.ethereum !== "undefined") {
                 if (contractAddress !== "") {
-                    await requestAccount()
                     const provider = new ethers.providers.Web3Provider(window.ethereum)
                     const erc721metadata = new ethers.Contract(contractAddress, IERC721Metadata.abi, provider)
                     const erc721 = new ethers.Contract(contractAddress, IERC721.abi, provider)
