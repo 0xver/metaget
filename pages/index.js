@@ -6,7 +6,9 @@ export default function Home() {
     <>
       <Head>
         <title>MetaGet</title>
-        <meta name="MetaGet" content="Get NFT metadata" />
+        <meta name="author" content="Sam Larsen" />
+        <meta name="description" content="Get NFT metadata from the blockchain" />
+        <meta name="keywords" content="metaget, metadata, nft, blockchain" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Search />
