@@ -42,4 +42,4 @@ http://localhost:3000
 ```
 
 ### Using dApp
-Install the Brave browser or the MetaMask extension and go to the local host address. Enter the NFT contract address and the token ID to fetch its metadata. Clicking on the terminal boxes will copy the information to the clipboard. Use MetaGet to search for NFTs on other EVM based blockchains with the correct network selected in MetaMask.
+Install the Brave browser or the MetaMask extension and go to the local host address. Enter the NFT contract address and the token ID to fetch its metadata. Click on the terminal boxes to copy the information to the clipboard. Fetch NFT metadata on other EVM compatible blockchains by changing the selected provider network.
