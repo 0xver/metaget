@@ -20,7 +20,7 @@ const Logo = styled.h1`
     color: #fff;
 `
 
-export default function Header(props) {
+export default function Header() {
     return (
         <Div>
             <Icon src="/icon.svg" />
