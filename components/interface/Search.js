@@ -357,7 +357,6 @@ export default function SearchInterface() {
                 } else {
                     url = tokenUri
                 }
-                setPreview(loadingImage)
                 const response = await fetch(url)
                 const json = await response.json()
                 const image = json.image
@@ -401,8 +400,9 @@ export default function SearchInterface() {
                         name = await erc721metadata.name()
                         symbol = await erc721metadata.symbol()
                         tokenUri = await erc1155metadata.uri(tokenId)
-                        owner = "ERC1155 unsupported"
+                        owner = "unknown"
                     }
+                    setPreview(loadingImage)
                     setName(name)
                     setSymbol(symbol)
                     setUri(tokenUri)
