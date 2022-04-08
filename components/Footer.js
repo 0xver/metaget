@@ -122,10 +122,6 @@ export default function Connect() {
         setProvider(window.ethereum)
     }, []);
 
-    const handleClick = () => {
-        window.ethereum.request({ method: "eth_requestAccounts" });
-    }
-
     async function requestAccount() {
         await window.ethereum.request({ method: "eth_requestAccounts"})
     }

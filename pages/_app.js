@@ -1,10 +1,10 @@
-import Structure from '../components/Structure'
-import '../styles/globals.css'
+import Structure from "../components/Structure"
+import "../styles/globals.css"
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component }) {
   return (
     <Structure>
-      <Component {...pageProps} />
+      <Component />
     </Structure>
   )
 }
