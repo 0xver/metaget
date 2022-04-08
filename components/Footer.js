@@ -24,15 +24,15 @@ const Footer = styled.div`
         border-radius: 0px;
     }
 
-    @media (max-width: 748px) {
+    @media (max-width: 740px) {
         height: 90px;
     }
 
-    @media (max-width: 613px) {
+    @media (max-width: 605px) {
         height: 100px;
     }
 
-    @media (max-width: 537px) {
+    @media (max-width: 519px) {
         height: 115px;
     }
 
@@ -42,13 +42,8 @@ const Footer = styled.div`
         padding-bottom: 20px;
     }
 
-    @media (max-width: 314px) {
-        height: 170px;
-        padding-top: 10px;
-    }
-
-    @media (max-width: 275px) {
-        height: 185px;
+    @media (max-width: 299px) {
+        height: 180px;
         padding-top: 0px;
     }
 `
@@ -110,8 +105,8 @@ const Button = styled.button`
         margin-right: 0px;
     }
 
-    @media (max-width: 314px) {
-        margin-bottom: 10px;
+    @media (max-width: 299px) {
+        margin-bottom: -20px;
     }
 `
 
@@ -149,7 +144,7 @@ export default function Connect() {
             <Mobile>
             <div>
                 <Text>
-                    MetaGet is a NFT metadata lookup providing the name, symbol, tokenURI, and owner (ERC721 only). Enter the NFT contract address and token ID to fetch its metadata from an EVM blockchain. See the&nbsp;
+                    MetaGet is a NFT metadata lookup providing the name, symbol, tokenURI, and owner of a token. Enter the NFT contract address and token ID to fetch its metadata from an EVM blockchain. See the&nbsp;
                     <a 
                         style={{
                             textDecoration: "underline",
