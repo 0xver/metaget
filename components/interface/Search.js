@@ -1,10 +1,10 @@
 import styled from "styled-components"
 import React, { useContext, useState } from "react"
 import { ethers } from "ethers"
-import IERC165 from "../abi/IERC165.json"
-import IERC721 from "../abi/IERC721.json"
-import IERC721Metadata from "../abi/IERC721Metadata.json"
-import IERC1155MetadataURI from "../abi/IERC1155MetadataURI.json"
+import ERC165 from "../abi/ERC165.json"
+import ERC721 from "../abi/ERC721.json"
+import ERC721Metadata from "../abi/ERC721Metadata.json"
+import ERC1155Metadata from "../abi/ERC1155Metadata.json"
 
 const Mobile = styled.div`
     @media (max-width: 570px) {
@@ -323,20 +323,19 @@ export default function SearchInterface() {
     const [owner, setOwner] = useState("unknown")
     const [preview, setPreview] = useState(noImage)
     const [previewLink, setPreviewLink] = useState(noImage)
-    const [statusMessage, setStatusMessage] = useState("")
 
-    async function requestAccount() {
-        await window.ethereum.request({ method: "eth_requestAccounts"})
+    const onError = (e) => {
+        setPreview(noImage)
     }
 
     async function getImage() {
         try {
             if (typeof window.ethereum !== "undefined") {
                 const provider = new ethers.providers.Web3Provider(window.ethereum)
-                const erc165 = new ethers.Contract(contractAddress, IERC165.abi, provider)
+                const erc165 = new ethers.Contract(contractAddress, ERC165, provider)
                 const support = await erc165.supportsInterface(0x80ac58cd)
-                const erc721metadata = new ethers.Contract(contractAddress, IERC721Metadata.abi, provider)
-                const erc1155metadata = new ethers.Contract(contractAddress, IERC1155MetadataURI.abi, provider)
+                const erc721metadata = new ethers.Contract(contractAddress, ERC721Metadata, provider)
+                const erc1155metadata = new ethers.Contract(contractAddress, ERC1155Metadata, provider)
                 var tokenUri
                 if (support === true) {
                     tokenUri = await erc721metadata.tokenURI(tokenId)
@@ -382,10 +381,10 @@ export default function SearchInterface() {
             if (typeof window.ethereum !== "undefined") {
                 if (contractAddress !== "") {
                     const provider = new ethers.providers.Web3Provider(window.ethereum)
-                    const erc721metadata = new ethers.Contract(contractAddress, IERC721Metadata.abi, provider)
-                    const erc721 = new ethers.Contract(contractAddress, IERC721.abi, provider)
-                    const erc1155metadata = new ethers.Contract(contractAddress, IERC1155MetadataURI.abi, provider)
-                    const erc165 = new ethers.Contract(contractAddress, IERC165.abi, provider)
+                    const erc721metadata = new ethers.Contract(contractAddress, ERC721Metadata, provider)
+                    const erc721 = new ethers.Contract(contractAddress, ERC721, provider)
+                    const erc1155metadata = new ethers.Contract(contractAddress, ERC1155Metadata, provider)
+                    const erc165 = new ethers.Contract(contractAddress, ERC165, provider)
                     const support = await erc165.supportsInterface(0x80ac58cd)
                     var name
                     var symbol
@@ -449,7 +448,7 @@ export default function SearchInterface() {
                     <Column>
                         <Overflow>
                             <Text>Preview</Text>
-                            <Preview onClick={() => {navigator.clipboard.writeText(previewLink)}} src={preview} />
+                            <Preview onClick={() => {navigator.clipboard.writeText(previewLink)}} onError={onError} src={preview} />
                         </Overflow>
                         <div>
                             <Row>
