@@ -1,6 +1,8 @@
 {
-  "name": "metasearch",
-  "private": true,
+  "name": "metaget",
+  "version": "1.0.0",
+  "author": "Sam Larsen",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
